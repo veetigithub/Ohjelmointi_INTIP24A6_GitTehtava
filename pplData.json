@@ -1,0 +1,16 @@
+[
+  {
+    "id": "10001",
+    "fName": "Petteri",
+    "lName": "Petterinen",
+    "password": "Kakka123"
+    "accountType": "PP"
+  },
+  {
+    "id": "10002",
+    "fName": "Mauri",
+    "lName": "Pikkuinen",
+    "password": "Kakka222"
+    "accountType": "TT"
+  }
+]
