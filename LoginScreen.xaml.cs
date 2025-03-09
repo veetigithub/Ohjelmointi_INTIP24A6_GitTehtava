@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,14 +16,39 @@ using System.Windows.Shapes;
 
 namespace Varasto
 {
-    /// <summary>
-    /// Interaction logic for LoginScreen.xaml
-    /// </summary>
+    public record struct Worker (
+        int id,
+        string fName,
+        string lName,
+        string password,
+        string accountType
+    );
+
     public partial class LoginScreen : Window
     {
         public LoginScreen()
         {
             InitializeComponent();
+        }
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+            var incoming = new List<Worker>();
+
+            using (StreamReader r = new StreamReader("pplData.json"))
+            {
+                string json = r.ReadToEnd();
+                incoming = JsonSerializer.Deserialize<List<Worker>>(json);
+            }
+
+            if (incoming != null && incoming.Count > 0)
+            {
+                foreach (var tt in incoming)
+                {
+                    Console.WriteLine($"{tt.fName} {tt.lName}");
+                }
+            }
+
         }
     }
 }
