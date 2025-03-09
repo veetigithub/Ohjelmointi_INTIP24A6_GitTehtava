@@ -43,7 +43,7 @@ namespace Varasto
                     break;
                 case "Työntekijät":
                     new TyontekijatWindow().Show();
-                    break; 
+                    break;
             }
         }
     }

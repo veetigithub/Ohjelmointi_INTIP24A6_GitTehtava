@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace Varasto
 {
-    /// <summary>
-    /// Interaction logic for InventaarioWindow.xaml
-    /// </summary>
+
     public partial class InventaarioWindow : Window
     {
         public InventaarioWindow()
@@ -24,9 +22,5 @@ namespace Varasto
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

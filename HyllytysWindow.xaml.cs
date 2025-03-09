@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace Varasto
 {
-    /// <summary>
-    /// Interaction logic for HyllytysWindow.xaml
-    /// </summary>
+
     public partial class HyllytysWindow : Window
     {
         public HyllytysWindow()
