@@ -12,7 +12,7 @@
             <ListBoxItem>Hyllytys</ListBoxItem>
             <ListBoxItem>Tuotteiden poisto</ListBoxItem>
             <ListBoxItem>Inventaario</ListBoxItem>
-            <ListBoxItem>Työntekijät</ListBoxItem>
+            <ListBoxItem Selected="ListBoxItem_Selected">Työntekijät</ListBoxItem>
         </ListBox>
     </Grid>
 </Window>
