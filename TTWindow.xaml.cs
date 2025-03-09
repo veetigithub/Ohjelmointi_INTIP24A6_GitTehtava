@@ -20,12 +20,30 @@ namespace Varasto
         {
             InitializeComponent();
         }
+        
 
         private void Nelio_Click(object sender, MouseButtonEventArgs e)
         {
+            var kerailyWindow = new KerailyWindow();
+            var hyllytysWindow = new HyllytysWindow();
             if (sender is Rectangle rect)
             {
-                MessageBox.Show($"Rectangle clicked: {rect.Name}");
+                switch (rect.Name)
+                {
+                    case "kerailyBtn": // Name of the first rectangle
+                        kerailyWindow.Show();
+                        MessageBox.Show($"Keraily nappula painettu: {rect.Name}");
+                        break;
+
+                    case "hyllytysBtn": // Name of the second rectangle
+                        hyllytysWindow.Show();
+                        MessageBox.Show($"Hyllytys nappula painettu: {rect.Name}");
+                        break;
+
+                    default:
+                        MessageBox.Show($"Muu nappula painettu??: {rect.Name}");
+                        break;
+                }
             }
         }
 
