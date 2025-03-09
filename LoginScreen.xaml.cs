@@ -32,7 +32,6 @@ namespace Varasto
         }
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Button clicked!");
 
             var incoming = new List<Worker>();
 
@@ -44,14 +43,14 @@ namespace Varasto
 
             if (incoming != null && incoming.Count > 0)
             {
-                MessageBox.Show("if happened!");
-                int Username = Int32.Parse(txtUsername);
-                string Password = txtPassword.ToString();
+                int Username = Int32.Parse(txtUsername.Text);
+                string Password = txtPassword.Password;
                 foreach (var tt in incoming)
                 {
                     if (tt.Id == Username && tt.Password == Password)
                     {
-
+                        MessageBox.Show("Kirjautuminen onnistui!");
+                        break;
                     }
                 }
             }
