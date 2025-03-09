@@ -14,13 +14,14 @@ using System.Windows.Shapes;
 
 namespace Varasto
 {
-
+    /// <summary>
+    /// Interaction logic for InventaarioWindow.xaml
+    /// </summary>
     public partial class InventaarioWindow : Window
     {
         public InventaarioWindow()
         {
             InitializeComponent();
         }
-
     }
 }

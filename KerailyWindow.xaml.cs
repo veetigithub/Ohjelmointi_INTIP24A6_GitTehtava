@@ -14,6 +14,9 @@ using System.Windows.Shapes;
 
 namespace Varasto
 {
+    /// <summary>
+    /// Interaction logic for KerailyWindow.xaml
+    /// </summary>
     public partial class KerailyWindow : Window
     {
         public KerailyWindow()

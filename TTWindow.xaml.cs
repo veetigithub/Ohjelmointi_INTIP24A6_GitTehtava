@@ -20,5 +20,14 @@ namespace Varasto
         {
             InitializeComponent();
         }
+
+        private void Nelio_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Rectangle rect)
+            {
+                MessageBox.Show($"Rectangle clicked: {rect.Name}");
+            }
+        }
+
     }
 }

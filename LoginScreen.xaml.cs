@@ -32,6 +32,7 @@ namespace Varasto
         }
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Button clicked!");
 
             var incoming = new List<Worker>();
 
@@ -43,8 +44,10 @@ namespace Varasto
 
             if (incoming != null && incoming.Count > 0)
             {
+                MessageBox.Show("if happened!");
                 foreach (var tt in incoming)
                 {
+                    MessageBox.Show(tt.FName);
                     teksti.Text += $"{tt.FName} {tt.LName}";
                 }
             }

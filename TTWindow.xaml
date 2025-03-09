@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Työntekijä" Height="450" Width="800">
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="175" Margin="80,70,0,0" Stroke="Black" VerticalAlignment="Top" Width="265"/>
-        <Rectangle Height="175" Margin="0,70,80,0" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Right" Width="265"/>
         <Label Content="Keräily" HorizontalAlignment="Left" Margin="80,44,0,0" VerticalAlignment="Top"/>
+        <Rectangle Name="kerailyBtn" MouseLeftButtonDown="Nelio_Click" HorizontalAlignment="Left" Height="175" Margin="80,70,0,0" Stroke="Black" VerticalAlignment="Top" Width="265"/>
         <Label Content="Hyllytys" HorizontalAlignment="Left" Margin="455,44,0,0" VerticalAlignment="Top"/>
+        <Rectangle Name="hyllytysBtn" MouseLeftButtonDown="Nelio_Click" Height="175" Margin="0,70,80,0" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Right" Width="265"/>
 
     </Grid>
 </Window>
