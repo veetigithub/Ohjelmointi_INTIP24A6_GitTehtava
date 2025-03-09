@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace Varasto
 {
     public record struct Worker (
-        int id,
-        string fName,
-        string lName,
-        string password,
-        string accountType
+        int Id,
+        string FName,
+        string LName,
+        string Password,
+        string AccountType
     );
 
     public partial class LoginScreen : Window
@@ -30,7 +30,7 @@ namespace Varasto
         {
             InitializeComponent();
         }
-        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
 
             var incoming = new List<Worker>();
@@ -45,7 +45,7 @@ namespace Varasto
             {
                 foreach (var tt in incoming)
                 {
-                    teksti.Text += $"{tt.fName} {tt.lName}";
+                    teksti.Text += $"{tt.FName} {tt.LName}";
                 }
             }
 
