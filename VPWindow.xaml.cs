@@ -25,7 +25,7 @@ namespace Varasto
         {
             if (menuList.SelectedItem == null) return;
 
-            string valinta = (menuList.SelectedItem as ListBoxItem).Content.ToString();
+            string valinta = ((ListBoxItem)menuList.SelectedItem).Content.ToString();
 
             switch (valinta)
             {
@@ -42,7 +42,7 @@ namespace Varasto
                     new InventaarioWindow().Show();
                     break;
                 case "Työntekijät":
-                    new TyontekijatWindow().Show();
+                    new TTWindow().Show();
                     break;
             }
         }
