@@ -45,7 +45,7 @@ namespace Varasto
             {
                 foreach (var tt in incoming)
                 {
-                    Console.WriteLine($"{tt.fName} {tt.lName}");
+                    btnSubmit.Content = $"{tt.fName} {tt.lName}";
                 }
             }
 
