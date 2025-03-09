@@ -45,10 +45,14 @@ namespace Varasto
             if (incoming != null && incoming.Count > 0)
             {
                 MessageBox.Show("if happened!");
+                int Username = Int32.Parse(txtUsername);
+                string Password = txtPassword.ToString();
                 foreach (var tt in incoming)
                 {
-                    MessageBox.Show(tt.FName);
-                    teksti.Text += $"{tt.FName} {tt.LName}";
+                    if (tt.Id == Username && tt.Password == Password)
+                    {
+
+                    }
                 }
             }
 
