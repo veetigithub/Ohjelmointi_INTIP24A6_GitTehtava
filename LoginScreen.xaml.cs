@@ -41,24 +41,33 @@ namespace Varasto
                 incoming = JsonSerializer.Deserialize<List<Worker>>(json);
             }
 
+            bool kirjautuminenOnnistui = false;
+
             if (incoming != null && incoming.Count > 0)
             {
-                int Username = Int32.Parse(txtUsername.Text);
-                string Password = txtPassword.Password;
                 try
                 {
+                    int Username = Int32.Parse(txtUsername.Text);
+                    string Password = txtPassword.Password;
+                
                     foreach (var tt in incoming)
                     {
                         if (tt.Id == Username && tt.Password == Password)
                         {
                             MessageBox.Show("Kirjautuminen onnistui!");
+                            kirjautuminenOnnistui = true;
                             break;
                         }
+                    }
+
+                    if (!kirjautuminenOnnistui)
+                    {
+                        MessageBox.Show("Kirjautuminen epäonnistui!");
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Väärä käyttäjätunnus tai salasana!");
+                    MessageBox.Show("Käyttäjätunnuksessa virheellisiä arvoja!");
                 }
             }
 
