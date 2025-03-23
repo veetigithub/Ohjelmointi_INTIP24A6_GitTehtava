@@ -58,19 +58,26 @@ namespace Varasto
                     {
                         if (tt.Id == Username && tt.Password == Password)
                         {
-                            // Tarkista Käyttäjätyyppi
+                            // Tarkista Käyttäjätyyppi ja avaa oikea window työntekijälle
                             if (tt.AccountType == "TT")
                                 {
-
+                                var TTWindow = new TTWindow();
+                                TTWindow.Show();
+                                Close();
+                                MessageBox.Show("Kirjauduttu " + Username);
+                                kirjautuminenOnnistui = true;
+                                break;
                                 }
                             else
                                 {
-
+                                var VPWindow = new VPWindow();
+                                VPWindow.Show();
+                                Close();
+                                MessageBox.Show("Kirjauduttu " + Username);
+                                kirjautuminenOnnistui = true;
+                                break;
                                 }
 
-                            MessageBox.Show("Kirjautuminen onnistui!");
-                            kirjautuminenOnnistui = true;
-                            break;
                         }
                     }
 
