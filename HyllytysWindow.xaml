@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Varasto"
         mc:Ignorable="d"
         Title="Hyllytys" Height="450" Width="800">
-    
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -37,5 +37,6 @@
             <TextBlock Text="Varmennuskoodi" FontWeight="Bold"/>
             <TextBox Name="VarmennuskoodiTextBox" Width="200"/>
         </StackPanel>
+        <Button Name="btnSubmit" Content="Hyllytä" HorizontalAlignment="Center" Margin="0,60,0,0" Grid.Row="3" VerticalAlignment="Top" Click="BtnSubmit_Click"/>
     </Grid>
 </Window>
