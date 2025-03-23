@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,8 @@ namespace Varasto
         {
 
             var incoming = new List<Worker>();
-
+            
+            // Haetaan pplData.json ja luetaan se c# objektiksi
             using (StreamReader r = new StreamReader("pplData.json"))
             {
                 string json = r.ReadToEnd();
@@ -43,17 +45,29 @@ namespace Varasto
 
             bool kirjautuminenOnnistui = false;
 
+            // Tarkistetaan että oikeasti löytyy dataa millä toimia
             if (incoming != null && incoming.Count > 0)
             {
                 try
                 {
                     int Username = Int32.Parse(txtUsername.Text);
                     string Password = txtPassword.Password;
-                
+                    
+                    // Jokaisen työntekijän tiedot käydään läpi ja etsitään mätsi salasana ja id
                     foreach (var tt in incoming)
                     {
                         if (tt.Id == Username && tt.Password == Password)
                         {
+                            // Tarkista Käyttäjätyyppi
+                            if (tt.AccountType == "TT")
+                                {
+
+                                }
+                            else
+                                {
+
+                                }
+
                             MessageBox.Show("Kirjautuminen onnistui!");
                             kirjautuminenOnnistui = true;
                             break;
