@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:Varasto"
         mc:Ignorable="d"
         Title="KerailyWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    
 </Window>

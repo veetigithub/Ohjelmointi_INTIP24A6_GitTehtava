@@ -1,10 +1,10 @@
 [
   {
     "prodID": 1328015,
-    "prodName": "Johdinside - Johdinside 300x4,8/100",
+    "prodName": "Johdinside - Johdinside 300x4,8",
     "prodType": "Kiinnitys",
     "prodMaker": "BizLine",
-    "prodPrice": "0,13",
-    "prodAmount": "100000"
+    "prodPrice": 0.13,
+    "prodAmount": 100000
   }
 ]
