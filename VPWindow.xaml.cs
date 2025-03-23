@@ -21,29 +21,39 @@ namespace Varasto
             InitializeComponent();
         }
 
-        private void MenuList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void MenuList_SelectionChanged(object sender,SelectionChangedEventArgs e)
         {
-            if (menuList.SelectedItem == null) return;
-
-            string valinta = ((ListBoxItem)menuList.SelectedItem).Content.ToString();
-
-            switch (valinta)
+            if (menuList.SelectedItem is ListBoxItem selectedItem)
             {
-                case "Keräily":
-                    new KerailyWindow().Show();
-                    break;
-                case "Hyllytys":
-                    new HyllytysWindow().Show();
-                    break;
-                case "Tuotteiden poisto":
-                    new PoistoWindow().Show();
-                    break;
-                case "Inventaario":
-                    new InventaarioWindow().Show();
-                    break;
-                case "Työntekijät":
-                    new TTWindow().Show();
-                    break;
+                string selectedText = selectedItem.Content.ToString();
+
+                switch (selectedText)
+                {
+                    case "Keräily":
+                        KerailyWindow kerailyIkkuna = new KerailyWindow();
+                        kerailyIkkuna.Show();
+                        break;
+
+                    case "Hyllytys":
+                        HyllytysWindow hyllytysIkkuna = new HyllytysWindow();
+                        hyllytysIkkuna.Show();
+                        break;
+
+                    case "Tuotteiden poisto":
+                        PoistoWindow poistoIkkuna = new PoistoWindow();
+                        poistoIkkuna.Show();
+                        break;
+
+                    case "Inventaario":
+                        InventaarioWindow inventaarioIkkuna = new InventaarioWindow();
+                        inventaarioIkkuna.Show();
+                        break;
+
+                    case "Työntekijät":
+                        TTWindow ttIkkuna = new TTWindow();
+                        ttIkkuna.Show();
+                        break;
+                }
             }
         }
 
