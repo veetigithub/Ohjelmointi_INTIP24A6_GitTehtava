@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="pplData.json" />
+    <None Remove="prodData.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="pplData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="prodData.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

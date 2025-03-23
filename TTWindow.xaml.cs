@@ -41,7 +41,7 @@ namespace Varasto
                         break;
 
                     default:
-                        MessageBox.Show($"Muu nappula painettu??: {rect.Name}");
+                        MessageBox.Show($"Muu nappula painettu??(ei mahdollista): {rect.Name}");
                         break;
                 }
             }
