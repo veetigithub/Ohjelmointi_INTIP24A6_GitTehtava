@@ -6,10 +6,36 @@
         xmlns:local="clr-namespace:Varasto"
         mc:Ignorable="d"
         Title="Hyllytys" Height="450" Width="800">
-    <Grid>
-        <TextBlock Text="Tervetuloa Hyllytys-näkymään!" 
-                   HorizontalAlignment="Center" VerticalAlignment="Center" 
-                   FontSize="20"/>
-        
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Hyllytys" FontSize="16" FontWeight="Bold" 
+                   Background="Lavender" Padding="5" TextAlignment="Center"
+                   Grid.Row="0" Grid.Column="0"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Text="ID esim. snumero" FontWeight="Bold"/>
+            <TextBox Name="IDTextBox" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Lisätty L.määrä" FontWeight="Bold"/>
+            <TextBox Name="LukumaaraTextBox" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <TextBlock Text="Varmennuskoodi" FontWeight="Bold"/>
+            <TextBox Name="VarmennuskoodiTextBox" Width="200"/>
+        </StackPanel>
     </Grid>
 </Window>
