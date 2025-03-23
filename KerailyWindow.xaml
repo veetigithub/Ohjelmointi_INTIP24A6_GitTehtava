@@ -6,5 +6,26 @@
         xmlns:local="clr-namespace:Varasto"
         mc:Ignorable="d"
         Title="KerailyWindow" Height="450" Width="800">
-    
+    <Grid>
+        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="120" Margin="60,50,0,0">
+            <Grid>
+                <Label Content="Tuotekoodi" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="txtProdID" HorizontalAlignment="Center" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="120" Margin="60,110,0,0">
+            <Grid>
+                <Label Content="Kerättävä määrä" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="txtProdAmount" HorizontalAlignment="Center" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="120" Margin="60,170,0,0">
+            <Grid>
+                <Label Content="Varmistuskoodi" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="txtProdSafety" HorizontalAlignment="Center" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </Border>
+        <Button Name="btnSubmit" Content="Kerää" HorizontalAlignment="Left" Margin="60,245,0,0" VerticalAlignment="Top" Click="BtnSubmit_Click"/>
+    </Grid>
+
 </Window>

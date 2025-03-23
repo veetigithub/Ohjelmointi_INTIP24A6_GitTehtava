@@ -16,14 +16,6 @@ using System.Windows.Shapes;
 
 namespace Varasto
 {
-    public record struct Product(
-        int prodID,
-        string prodName,
-        string prodType,
-        string prodMaker,
-        decimal prodPrice,
-        int prodAmount
-    );
     public partial class InventaarioWindow : Window
     {
         public InventaarioWindow()
