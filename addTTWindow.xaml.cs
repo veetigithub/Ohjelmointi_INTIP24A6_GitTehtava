@@ -40,7 +40,7 @@ namespace Varasto
             {
                 try
                 {
-                    string newAccountType = addAccountType.Text;
+                    string newAccountType = addAccountType.Text.ToUpper();
                     int newUsername = Int32.Parse(addUsername.Text);
 
                     //Tarkista ID matchejä
