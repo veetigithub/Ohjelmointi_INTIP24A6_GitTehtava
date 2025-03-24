@@ -28,17 +28,56 @@ namespace Varasto
         // kirjoitetaan jsonille uusi työntekijä
         private void btnAddWorker_Click(object sender, RoutedEventArgs e)
         {
-            var addNewWorker = new Worker
+            var incoming = new List<Worker>();
+
+            using (StreamReader r = new StreamReader("pplData.json"))
             {
-                Id = Int32.Parse(addUsername.Text),
-                FName = addFName.Text,
-                LName = addLName.Text,
-                Password = addPassword.Text,
-                AccountType = addAccountType.Text
-            };
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            string jsonString = JsonSerializer.Serialize(addNewWorker, options);
-            MessageBox.Show("Työntekijä lisätty!");
+                string json = r.ReadToEnd();
+                incoming = JsonSerializer.Deserialize<List<Worker>>(json);
+            }
+
+            if (incoming != null && incoming.Count > 0)
+            {
+                try
+                {
+                    var addNewWorker = new Worker
+                    {
+                        Id = Int32.Parse(addUsername.Text),
+                        FName = addFName.Text,
+                        LName = addLName.Text,
+                        Password = addPassword.Text,
+                        AccountType = addAccountType.Text
+                    };
+
+                    // Pistä tuleva pituus talteen
+                    int beforeCount = incoming.Count;
+
+                    // Uusi worker lista vanhan tilalle
+                    List<Worker> updatedList = new List<Worker>();
+
+                    updatedList.Add(addNewWorker); // Lisää uusi työntekijä
+
+                    incoming = updatedList; // Pistä uusi lista vanhan tilalle
+
+                    // jos samanpituinen et lisännyt työntekijää
+                    int afterCount = incoming.Count;
+                    if (beforeCount == afterCount)
+                    {
+                        MessageBox.Show("Et lisännyt työntekijää!");
+                        return;
+                    }
+
+                    // Kirjoita takaisin tiedostoon
+                    string updatedJson = JsonSerializer.Serialize(incoming, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText("pplData.json", updatedJson);
+
+                    MessageBox.Show("Työntekijä lisätty!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Virheellisiä arvoja!");
+                }
+            }
         }
     }
 }
