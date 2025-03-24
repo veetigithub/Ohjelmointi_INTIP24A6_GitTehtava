@@ -38,5 +38,11 @@ namespace Varasto
 
             }
         }
+
+        private void btnAddTT_Click(object sender, RoutedEventArgs e)
+        {
+            var addTTWindow = new addTTWindow();
+            addTTWindow.Show();
+        }
     }
 }

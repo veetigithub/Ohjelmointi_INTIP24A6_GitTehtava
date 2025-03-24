@@ -10,6 +10,8 @@
         <Border Margin="20" Background="Gray">
             <StackPanel>
                 <DataGrid AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="ttTietoPankki" Margin="10" FontSize="15"></DataGrid>
+                <Separator></Separator>
+                <Button Width="100" Height="20" HorizontalAlignment="Left" Name="btnAddTT" Content="Lisää Työntekijä" Click="btnAddTT_Click"></Button>
             </StackPanel>
         </Border>
             
