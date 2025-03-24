@@ -81,7 +81,7 @@ namespace Varasto.VuoropaalikkoNakymat
                     string updatedJson = JsonSerializer.Serialize(incoming, new JsonSerializerOptions { WriteIndented = true });
                     File.WriteAllText("prodData.json", updatedJson);
 
-                    MessageBox.Show("Työntekijä lisätty!");
+                    MessageBox.Show("Tuote lisätty!");
                 }
                 catch (Exception)
                 {
