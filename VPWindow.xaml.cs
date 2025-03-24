@@ -50,7 +50,7 @@ namespace Varasto
                         break;
 
                     case "Työntekijät":
-                        TTWindow ttIkkuna = new TTWindow();
+                        ttTiedot ttIkkuna = new ttTiedot();
                         ttIkkuna.Show();
                         break;
                 }
