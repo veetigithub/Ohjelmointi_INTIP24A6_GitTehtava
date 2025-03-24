@@ -43,6 +43,7 @@ namespace Varasto
                     string newAccountType = addAccountType.Text;
                     int newUsername = Int32.Parse(addUsername.Text);
 
+                    //Tarkista ID matchejä
                     foreach(var worker in incoming)
                     {
                         if(worker.Id == newUsername)
@@ -52,12 +53,14 @@ namespace Varasto
                         }
                     }
                     
+                    // Tarkista PP TT tilityyppi
                     if(newAccountType != "TT" || newAccountType != "PP")
                     {
                         MessageBox.Show("Väärä tili! Kirjoita TT tai PP!");
                         return;
                     }
 
+                    // uusi worker annetuista arvoista
                     var addNewWorker = new Worker
                     {
                         Id = newUsername,
