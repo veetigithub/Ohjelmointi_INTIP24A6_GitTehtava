@@ -1,8 +1,20 @@
 ﻿<Window x:Class="Varasto.PoistoWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Tuotteiden poisto" Height="300" Width="400">
+        Title="Tuotteiden poisto" Height="350" Width="350">
     <Grid>
-        
+        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="120" Margin="60,50,0,0">
+            <Grid>
+                <Label Content="Tuotekoodi" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="txtProdID" HorizontalAlignment="Center" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="120" Margin="60,108,0,0">
+            <Grid>
+                <Label Content="Varmistuskoodi" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="txtProdSafety" HorizontalAlignment="Center" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </Border>
+        <Button Name="btnSubmit" Content="Poista" HorizontalAlignment="Left" Margin="60,175,0,0" VerticalAlignment="Top" Click="BtnSubmit_Click"/>
     </Grid>
 </Window>
