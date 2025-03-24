@@ -40,13 +40,20 @@ namespace Varasto
             {
                 try
                 {
+                    string newAccountType = addAccountType.Text;
+                    if(newAccountType != "TT" || newAccountType != "PP")
+                    {
+                        MessageBox.Show("Väärä tili! Kirjoita TT tai PP!");
+                        return;
+                    }
+
                     var addNewWorker = new Worker
                     {
                         Id = Int32.Parse(addUsername.Text),
                         FName = addFName.Text,
                         LName = addLName.Text,
                         Password = addPassword.Text,
-                        AccountType = addAccountType.Text
+                        AccountType = newAccountType
                     };
 
                     // Pistä tuleva pituus talteen
