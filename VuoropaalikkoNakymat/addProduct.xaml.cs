@@ -55,7 +55,7 @@ namespace Varasto.VuoropaalikkoNakymat
                     // uusi product annetuista arvoista
                     var addNewProduct = new Product
                     {
-                        prodID = Int32.Parse(addProdName.Text),
+                        prodID = newProdId,
                         prodName = addProdName.Text,
                         prodType = addProdType.Text,
                         prodMaker = addProdMaker.Text,
