@@ -41,6 +41,17 @@ namespace Varasto
                 try
                 {
                     string newAccountType = addAccountType.Text;
+                    int newUsername = Int32.Parse(addUsername.Text);
+
+                    foreach(var worker in incoming)
+                    {
+                        if(worker.Id == newUsername)
+                        {
+                            MessageBox.Show("ID Käytössä! Yritä toista!");
+                            return;
+                        }
+                    }
+                    
                     if(newAccountType != "TT" || newAccountType != "PP")
                     {
                         MessageBox.Show("Väärä tili! Kirjoita TT tai PP!");
@@ -49,7 +60,7 @@ namespace Varasto
 
                     var addNewWorker = new Worker
                     {
-                        Id = Int32.Parse(addUsername.Text),
+                        Id = newUsername,
                         FName = addFName.Text,
                         LName = addLName.Text,
                         Password = addPassword.Text,
