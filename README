@@ -1,14 +1,9 @@
-Kiva ryhmän X maailmankaikkeuden hienoin rojekti. Copyright, 2025, Aleks Nieminen, Veeti Vesterinen, Jani
+Kiva ryhmän (tähän ryhmän nimi) maailmankaikkeuden hienoin rojekti. Copyright, 2025, Aleks Nieminen, Veeti Vesterinen, Jani
 
-pienmuutos22
+Warehouse Inventory Management System
+----------
+Voit kirjautua sisään joko työntekijänä tai varastopäälikkönä
 
-
-Kauhea mankeli -Jani
-
-=======
-
-I was here 2021 -veeti
-
-I was never here -Jani
-
+työntekijänä pääsee keräämään ja hyllyttämään tuotteita
+varastopäälikkönä pääsee niiden lisäksi lisäämään ja poistamaan tuotteita, näkemään inventaarion kaikista tuotteista ja työntekijöistä, ja lisätä työntekijöitä.
 
