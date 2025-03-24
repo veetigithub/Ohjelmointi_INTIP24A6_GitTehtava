@@ -1,0 +1,28 @@
+﻿<Window x:Class="Varasto.VuoropaalikkoNakymat.addTTWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Varasto"
+        mc:Ignorable="d"
+        Title="Lisää Työntekijä" Height="500" Width="800" Background="Black">
+    <Grid>
+        <Border Margin="20" Background="Gray">
+            <StackPanel Margin="20">
+                <Label Content="Lisää Työntekijä" Foreground="White" FontSize="25" HorizontalAlignment="Center" />
+                <Separator></Separator>
+                <Label Content="Työntekijä ID" Foreground="White" />
+                <TextBox Name="addUsername" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Salasana" Foreground="White" />
+                <TextBox Name="addPassword" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Etunimi" Foreground="White" />
+                <TextBox Name="addFName" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Sukunimi" Foreground="White" />
+                <TextBox Name="addLName" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Työntekijän tyyppi (PP/TT)" Foreground="White" />
+                <TextBox Name="addAccountType" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Button Name="btnAddWorker" Content="Lisää" Margin="60 10" Background="DarkSlateGray" Foreground="White" FontSize="18" Click="btnAddWorker_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

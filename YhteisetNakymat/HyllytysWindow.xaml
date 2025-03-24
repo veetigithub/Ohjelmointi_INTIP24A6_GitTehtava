@@ -1,0 +1,42 @@
+﻿<Window x:Class="Varasto.YhteisetNakymat.HyllytysWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Varasto"
+        mc:Ignorable="d"
+        Title="Hyllytys" Height="450" Width="800">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Hyllytys" FontSize="16" FontWeight="Bold" 
+                   Background="Lavender" Padding="5" TextAlignment="Center"
+                   Grid.Row="0" Grid.Column="0"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Text="ID esim. snumero" FontWeight="Bold"/>
+            <TextBox Name="IDTextBox" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Lisätty L.määrä" FontWeight="Bold"/>
+            <TextBox Name="LukumaaraTextBox" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <TextBlock Text="Varmennuskoodi" FontWeight="Bold"/>
+            <TextBox Name="VarmennuskoodiTextBox" Width="200"/>
+        </StackPanel>
+        <Button Name="btnSubmit" Content="Hyllytä" HorizontalAlignment="Center" Margin="0,60,0,0" Grid.Row="3" VerticalAlignment="Top" Click="BtnSubmit_Click"/>
+    </Grid>
+</Window>

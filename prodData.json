@@ -1,0 +1,92 @@
+[
+  {
+    "prodID": 1328015,
+    "prodName": "Johdinside - Johdinside 300x4,8",
+    "prodType": "Kiinnitys",
+    "prodMaker": "BizLine",
+    "prodPrice": 0.13,
+    "prodAmount": 100000,
+    "prodSafety": "1234"
+  },
+  {
+    "prodID": 1328016,
+    "prodName": "Ruuvimeisseli - PH2x100",
+    "prodType": "Työkalut",
+    "prodMaker": "Wera",
+    "prodPrice": 5.49,
+    "prodAmount": 500,
+    "prodSafety": "5678"
+  },
+  {
+    "prodID": 1328017,
+    "prodName": "Sähköteippi - PVC 19mm",
+    "prodType": "Sähkötarvikkeet",
+    "prodMaker": "3M",
+    "prodPrice": 1.29,
+    "prodAmount": 2000,
+    "prodSafety": "9101"
+  },
+  {
+    "prodID": 1328018,
+    "prodName": "Jatkojohto - 3m, maadoitettu",
+    "prodType": "Sähkö",
+    "prodMaker": "Schneider Electric",
+    "prodPrice": 12.99,
+    "prodAmount": 150,
+    "prodSafety": "1121"
+  },
+  {
+    "prodID": 1328019,
+    "prodName": "Vasara - 500g",
+    "prodType": "Työkalut",
+    "prodMaker": "Stanley",
+    "prodPrice": 9.99,
+    "prodAmount": 300,
+    "prodSafety": "3141"
+  },
+  {
+    "prodID": 1328020,
+    "prodName": "Pultti - M8x50, 10kpl",
+    "prodType": "Kiinnitys",
+    "prodMaker": "BoltFix",
+    "prodPrice": 2.50,
+    "prodAmount": 1000,
+    "prodSafety": "5161"
+  },
+  {
+    "prodID": 1328021,
+    "prodName": "Liima - Superliima 3g",
+    "prodType": "Kemikaalit",
+    "prodMaker": "Loctite",
+    "prodPrice": 3.79,
+    "prodAmount": 750,
+    "prodSafety": "7181"
+  },
+  {
+    "prodID": 1328022,
+    "prodName": "Laakeri - 6202ZZ",
+    "prodType": "Mekaniikka",
+    "prodMaker": "SKF",
+    "prodPrice": 6.25,
+    "prodAmount": 500,
+    "prodSafety": "9202"
+  },
+  {
+    "prodID": 1328023,
+    "prodName": "Suojaus - Suojalasit kirkas",
+    "prodType": "Turvavarusteet",
+    "prodMaker": "Uvex",
+    "prodPrice": 8.99,
+    "prodAmount": 400,
+    "prodSafety": "3344"
+  },
+  {
+    "prodID": 1328024,
+    "prodName": "Käsineet - Nitriilikäsineet L, 100kpl",
+    "prodType": "Turvavarusteet",
+    "prodMaker": "Ansell",
+    "prodPrice": 14.50,
+    "prodAmount": 200,
+    "prodSafety": "5566"
+  }
+]

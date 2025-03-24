@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 10001,
+    "FName": "Petteri",
+    "LName": "Petterinen",
+    "Password": "Kakka123",
+    "AccountType": "PP"
+  },
+  {
+    "Id": 10002,
+    "FName": "Mauri",
+    "LName": "Pikkuinen",
+    "Password": "Kakka222",
+    "AccountType": "TT"
+  }
+]
