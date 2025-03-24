@@ -15,7 +15,6 @@
             <Label Content="Password" Foreground="White" />
             <PasswordBox Name="txtPassword" Background="DarkSlateGray" Foreground="White" FontSize="18" />
             <Button Name="btnSubmit" Content="Submit" Margin="60 10" Background="DarkSlateGray" Foreground="White" FontSize="18" Click="BtnSubmit_Click" />
-            <TextBlock TextWrapping="Wrap" Name="teksti" Text="TextBlock" Height="123"/>
         </StackPanel>
     </Border>
 </Window>

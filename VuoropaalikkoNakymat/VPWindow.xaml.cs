@@ -30,12 +30,12 @@ namespace Varasto.VuoropaalikkoNakymat
                 switch (selectedText)
                 {
                     case "Keräily":
-                        KerailyWindow kerailyIkkuna = new KerailyWindow();
+                        YhteisetNakymat.KerailyWindow kerailyIkkuna = new();
                         kerailyIkkuna.Show();
                         break;
 
                     case "Hyllytys":
-                        HyllytysWindow hyllytysIkkuna = new HyllytysWindow();
+                        YhteisetNakymat.HyllytysWindow hyllytysIkkuna = new();
                         hyllytysIkkuna.Show();
                         break;
 

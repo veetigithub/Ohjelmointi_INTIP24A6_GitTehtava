@@ -28,12 +28,12 @@ namespace Varasto.VuoropaalikkoNakymat
         // kirjoitetaan jsonille uusi työntekijä
         private void btnAddWorker_Click(object sender, RoutedEventArgs e)
         {
-            var incoming = new List<Worker>();
+            var incoming = new List<YhteisetNakymat.Worker>();
 
             using (StreamReader r = new StreamReader("pplData.json"))
             {
                 string json = r.ReadToEnd();
-                incoming = JsonSerializer.Deserialize<List<Worker>>(json);
+                incoming = JsonSerializer.Deserialize<List<YhteisetNakymat.Worker>>(json);
             }
 
             if (incoming != null && incoming.Count > 0)
@@ -61,7 +61,7 @@ namespace Varasto.VuoropaalikkoNakymat
                     }
 
                     // uusi worker annetuista arvoista
-                    var addNewWorker = new Worker
+                    var addNewWorker = new YhteisetNakymat.Worker
                     {
                         Id = newUsername,
                         FName = addFName.Text,

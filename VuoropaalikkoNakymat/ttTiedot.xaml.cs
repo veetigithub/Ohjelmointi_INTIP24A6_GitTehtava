@@ -24,12 +24,12 @@ namespace Varasto.VuoropaalikkoNakymat
         public ttTiedot()
         {
             InitializeComponent();
-            var incoming = new List<Worker>();
+            var incoming = new List<YhteisetNakymat.Worker>();
 
             using (StreamReader r = new StreamReader("pplData.json"))
             {
                 string json = r.ReadToEnd();
-                incoming = JsonSerializer.Deserialize<List<Worker>>(json);
+                incoming = JsonSerializer.Deserialize<List<YhteisetNakymat.Worker>>(json);
             }
 
             if (incoming != null && incoming.Count > 0)

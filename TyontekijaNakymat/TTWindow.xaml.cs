@@ -24,8 +24,8 @@ namespace Varasto.TyontekijaNakymat
 
         private void Nelio_Click(object sender, MouseButtonEventArgs e)
         {
-            var kerailyWindow = new KerailyWindow();
-            var hyllytysWindow = new HyllytysWindow();
+            var kerailyWindow = new YhteisetNakymat.KerailyWindow();
+            var hyllytysWindow = new YhteisetNakymat.HyllytysWindow();
             if (sender is Rectangle rect)
             {
                 switch (rect.Name)

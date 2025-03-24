@@ -61,7 +61,7 @@ namespace Varasto.YhteisetNakymat
                             // Tarkista Käyttäjätyyppi ja avaa oikea window työntekijälle
                             if (tt.AccountType == "TT")
                                 {
-                                var TTWindow = new TTWindow();
+                                var TTWindow = new TyontekijaNakymat.TTWindow();
                                 TTWindow.Show();
                                 Close();
                                 MessageBox.Show("Kirjauduttu " + Username);
@@ -70,7 +70,7 @@ namespace Varasto.YhteisetNakymat
                                 }
                             else
                                 {
-                                var VPWindow = new VPWindow();
+                                var VPWindow = new VuoropaalikkoNakymat.VPWindow();
                                 VPWindow.Show();
                                 Close();
                                 MessageBox.Show("Kirjauduttu " + Username);

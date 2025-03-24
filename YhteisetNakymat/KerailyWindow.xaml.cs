@@ -17,16 +17,7 @@ using System.Windows.Shapes;
 
 namespace Varasto.YhteisetNakymat
 {
-    public class Product
-    {
-        public int prodID { get; set; }
-        public string prodName { get; set; }
-        public string prodType { get; set; }
-        public string prodMaker { get; set; }
-        public decimal prodPrice { get; set; }
-        public int prodAmount { get; set; }
-        public string prodSafety { get; set; }
-    }
+    
     public partial class KerailyWindow : Window
     {
         public KerailyWindow()
