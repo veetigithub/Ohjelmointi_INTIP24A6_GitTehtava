@@ -11,6 +11,7 @@
             <ListBoxItem>Keräily</ListBoxItem>
             <ListBoxItem>Hyllytys</ListBoxItem>
             <ListBoxItem>Tuotteiden poisto</ListBoxItem>
+            <ListBoxItem>Tuotteiden lisäys</ListBoxItem>
             <ListBoxItem>Inventaario</ListBoxItem>
             <ListBoxItem Selected="ListBoxItem_Selected">Työntekijät</ListBoxItem>
         </ListBox>

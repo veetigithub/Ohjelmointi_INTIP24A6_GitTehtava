@@ -43,6 +43,10 @@ namespace Varasto.VuoropaalikkoNakymat
                         PoistoWindow poistoIkkuna = new PoistoWindow();
                         poistoIkkuna.Show();
                         break;
+                    case "Tuotteiden lisäys":
+                        addProduct addProduct = new addProduct();
+                        addProduct.Show();
+                        break;
 
                     case "Inventaario":
                         InventaarioWindow inventaarioIkkuna = new InventaarioWindow();
