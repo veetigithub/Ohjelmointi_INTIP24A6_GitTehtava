@@ -52,12 +52,7 @@ namespace Varasto
                     // Pistä tuleva pituus talteen
                     int beforeCount = incoming.Count;
 
-                    // Uusi worker lista vanhan tilalle
-                    List<Worker> updatedList = new List<Worker>();
-
-                    updatedList.Add(addNewWorker); // Lisää uusi työntekijä
-
-                    incoming = updatedList; // Pistä uusi lista vanhan tilalle
+                    incoming.Add(addNewWorker); // Lisää uusi työntekijä
 
                     // jos samanpituinen et lisännyt työntekijää
                     int afterCount = incoming.Count;
