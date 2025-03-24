@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Varasto.VuoropaalikkoNakymat"
         mc:Ignorable="d"
-        Title="Tuotteen lisäys" Height="550" Width="800" Background="Black">
+        Title="Tuotteen lisäys" Height="575" Width="800" Background="Black">
     <Grid>
         <Border Margin="20" Background="Gray">
             <StackPanel Margin="20">
