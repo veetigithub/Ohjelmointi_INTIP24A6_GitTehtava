@@ -1,0 +1,32 @@
+﻿<Window x:Class="Varasto.VuoropaalikkoNakymat.addProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Varasto.VuoropaalikkoNakymat"
+        mc:Ignorable="d"
+        Title="Tuotteen lisäys" Height="575" Width="800" Background="Black">
+    <Grid>
+        <Border Margin="20" Background="Gray">
+            <StackPanel Margin="20">
+                <Label Content="Lisää Tuote" Foreground="White" FontSize="25" HorizontalAlignment="Center" />
+                <Separator></Separator>
+                <Label Content="Tuote ID" Foreground="White" />
+                <TextBox Name="addProdId" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Tuotenimi" Foreground="White" />
+                <TextBox Name="addProdName" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Tuotetyyppi" Foreground="White" />
+                <TextBox Name="addProdType" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Valmistaja" Foreground="White" />
+                <TextBox Name="addProdMaker" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Tuotehinta" Foreground="White" />
+                <TextBox Name="addProdPrice" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Tuotemäärä" Foreground="White" />
+                <TextBox Name="addProdAmount" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Label Content="Tuoteturvakoodi" Foreground="White" />
+                <TextBox Name="addProdSafety" Background="DarkSlateGray" Foreground="White" FontSize="18" />
+                <Button Name="btnAddProd" Content="Lisää" Margin="60 10" Background="DarkSlateGray" Foreground="White" FontSize="18" Click="btnAddProd_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

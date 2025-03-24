@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +21,19 @@ namespace Varasto.TyontekijaNakymat
         public TTWindow()
         {
             InitializeComponent();
+            var incoming = new List<Product>();
+
+            using (StreamReader r = new StreamReader("prodData.json"))
+            {
+                string json = r.ReadToEnd();
+                incoming = JsonSerializer.Deserialize<List<Product>>(json);
+            }
+
+            if (incoming != null && incoming.Count > 0)
+            {
+                ProductsDataGrid.ItemsSource = incoming;
+
+            }
         }
         
 
@@ -38,6 +53,22 @@ namespace Varasto.TyontekijaNakymat
                     case "hyllytysBtn": // Name of the second rectangle
                         hyllytysWindow.Show();
                         MessageBox.Show($"Hyllytys nappula painettu: {rect.Name}");
+                        break;
+
+                    case "TTWindowReload": // Name of the reload rectangle
+                        var incoming = new List<Product>();
+
+                        using (StreamReader r = new StreamReader("prodData.json"))
+                        {
+                            string json = r.ReadToEnd();
+                            incoming = JsonSerializer.Deserialize<List<Product>>(json);
+                        }
+
+                        if (incoming != null && incoming.Count > 0)
+                        {
+                            ProductsDataGrid.ItemsSource = incoming;
+
+                        }
                         break;
 
                     default:
