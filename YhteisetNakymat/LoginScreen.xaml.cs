@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Varasto
+namespace Varasto.YhteisetNakymat
 {
     public record struct Worker (
         int Id,

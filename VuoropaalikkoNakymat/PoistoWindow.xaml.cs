@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Formats.Asn1;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,25 +14,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Varasto
+namespace Varasto.VuoropaalikkoNakymat
 {
-    public class Product
+    /// <summary>
+    /// Interaction logic for PoistoWindow.xaml
+    /// </summary>
+    public partial class PoistoWindow : Window
     {
-        public int prodID { get; set; }
-        public string prodName { get; set; }
-        public string prodType { get; set; }
-        public string prodMaker { get; set; }
-        public decimal prodPrice { get; set; }
-        public int prodAmount { get; set; }
-        public string prodSafety { get; set; }
-    }
-    public partial class KerailyWindow : Window
-    {
-        public KerailyWindow()
+        public PoistoWindow()
         {
             InitializeComponent();
-            
         }
+
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
             var incoming = new List<Product>();
@@ -49,31 +41,25 @@ namespace Varasto
                 try
                 {
                     int prodID = Int32.Parse(txtProdID.Text);
-                    int prodAmount = Int32.Parse(txtProdAmount.Text);
                     string prodSafety = txtProdSafety.Text;
 
-                    // Find and update product
-                    bool productFound = false;
+                    // For checking if product is found
+                    int beforeCount = incoming.Count;
 
+                    // Creating a new list that will be used to overwrite the json file
+                    List<Product> updatedList = new List<Product>();
                     foreach (var product in incoming)
                     {
-                        if (product.prodID == prodID && product.prodSafety == prodSafety)
+                        if (!(product.prodID == prodID && product.prodSafety == prodSafety))
                         {
-                            if (product.prodAmount >= prodAmount)
-                            {
-                                product.prodAmount -= prodAmount;
-                                productFound = true;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Varastossa ei ole tarpeeksi tuotetta!");
-                                return;
-                            }
-                            break;
+                            updatedList.Add(product); // Keep the product if it does NOT match
                         }
                     }
+                    incoming = updatedList; // Assign filtered list back
 
-                    if (!productFound)
+                    // If the list is the same length it didnt remove a product
+                    int afterCount = incoming.Count;
+                    if (beforeCount == afterCount)
                     {
                         MessageBox.Show("Tuotetta ei löydy!");
                         return;
@@ -83,11 +69,11 @@ namespace Varasto
                     string updatedJson = JsonSerializer.Serialize(incoming, new JsonSerializerOptions { WriteIndented = true });
                     File.WriteAllText("prodData.json", updatedJson);
 
-                    MessageBox.Show("Tuotteen määrä päivitetty onnistuneesti!");
+                    MessageBox.Show("Tuote poistettu onnistuneesti!");
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Keräilytiedoissa virheellisiä arvoja!");
+                    MessageBox.Show("Poistotiedoissa virheellisiä arvoja!");
                 }
             }
         }

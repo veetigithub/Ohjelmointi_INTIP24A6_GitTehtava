@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Varasto
+namespace Varasto.VuoropaalikkoNakymat
 {
     /// <summary>
     /// Interaction logic for addTTWindow.xaml

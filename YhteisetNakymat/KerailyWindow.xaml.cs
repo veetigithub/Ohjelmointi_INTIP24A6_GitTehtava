@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Varasto
+namespace Varasto.YhteisetNakymat
 {
-
-    public partial class HyllytysWindow : Window
+    public class Product
     {
-        public HyllytysWindow()
+        public int prodID { get; set; }
+        public string prodName { get; set; }
+        public string prodType { get; set; }
+        public string prodMaker { get; set; }
+        public decimal prodPrice { get; set; }
+        public int prodAmount { get; set; }
+        public string prodSafety { get; set; }
+    }
+    public partial class KerailyWindow : Window
+    {
+        public KerailyWindow()
         {
             InitializeComponent();
+            
         }
-
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
             var incoming = new List<Product>();
@@ -38,9 +48,9 @@ namespace Varasto
             {
                 try
                 {
-                    int prodID = Int32.Parse(IDTextBox.Text);
-                    int prodAmount = Int32.Parse(LukumaaraTextBox.Text);
-                    string prodSafety = VarmennuskoodiTextBox.Text;
+                    int prodID = Int32.Parse(txtProdID.Text);
+                    int prodAmount = Int32.Parse(txtProdAmount.Text);
+                    string prodSafety = txtProdSafety.Text;
 
                     // Find and update product
                     bool productFound = false;
@@ -49,9 +59,16 @@ namespace Varasto
                     {
                         if (product.prodID == prodID && product.prodSafety == prodSafety)
                         {
-
-                            product.prodAmount += prodAmount;
-                            productFound = true;
+                            if (product.prodAmount >= prodAmount)
+                            {
+                                product.prodAmount -= prodAmount;
+                                productFound = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Varastossa ei ole tarpeeksi tuotetta!");
+                                return;
+                            }
                             break;
                         }
                     }
@@ -70,7 +87,7 @@ namespace Varasto
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Hyllytystiedoissa virheellisiä arvoja!");
+                    MessageBox.Show("Keräilytiedoissa virheellisiä arvoja!");
                 }
             }
         }

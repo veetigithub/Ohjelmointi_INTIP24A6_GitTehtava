@@ -14,14 +14,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Varasto
+namespace Varasto.YhteisetNakymat
 {
-    /// <summary>
-    /// Interaction logic for PoistoWindow.xaml
-    /// </summary>
-    public partial class PoistoWindow : Window
+
+    public partial class HyllytysWindow : Window
     {
-        public PoistoWindow()
+        public HyllytysWindow()
         {
             InitializeComponent();
         }
@@ -40,26 +38,25 @@ namespace Varasto
             {
                 try
                 {
-                    int prodID = Int32.Parse(txtProdID.Text);
-                    string prodSafety = txtProdSafety.Text;
+                    int prodID = Int32.Parse(IDTextBox.Text);
+                    int prodAmount = Int32.Parse(LukumaaraTextBox.Text);
+                    string prodSafety = VarmennuskoodiTextBox.Text;
 
-                    // For checking if product is found
-                    int beforeCount = incoming.Count;
+                    // Find and update product
+                    bool productFound = false;
 
-                    // Creating a new list that will be used to overwrite the json file
-                    List<Product> updatedList = new List<Product>();
                     foreach (var product in incoming)
                     {
-                        if (!(product.prodID == prodID && product.prodSafety == prodSafety))
+                        if (product.prodID == prodID && product.prodSafety == prodSafety)
                         {
-                            updatedList.Add(product); // Keep the product if it does NOT match
+
+                            product.prodAmount += prodAmount;
+                            productFound = true;
+                            break;
                         }
                     }
-                    incoming = updatedList; // Assign filtered list back
 
-                    // If the list is the same length it didnt remove a product
-                    int afterCount = incoming.Count;
-                    if (beforeCount == afterCount)
+                    if (!productFound)
                     {
                         MessageBox.Show("Tuotetta ei löydy!");
                         return;
@@ -69,11 +66,11 @@ namespace Varasto
                     string updatedJson = JsonSerializer.Serialize(incoming, new JsonSerializerOptions { WriteIndented = true });
                     File.WriteAllText("prodData.json", updatedJson);
 
-                    MessageBox.Show("Tuote poistettu onnistuneesti!");
+                    MessageBox.Show("Tuotteen määrä päivitetty onnistuneesti!");
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Poistotiedoissa virheellisiä arvoja!");
+                    MessageBox.Show("Hyllytystiedoissa virheellisiä arvoja!");
                 }
             }
         }
