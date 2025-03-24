@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,10 +25,20 @@ namespace Varasto
         {
             InitializeComponent();
         }
-
+        // kirjoitetaan jsonille uusi työntekijä
         private void btnAddWorker_Click(object sender, RoutedEventArgs e)
         {
-
+            var addNewWorker = new Worker
+            {
+                Id = Int32.Parse(addUsername.Text),
+                FName = addFName.Text,
+                LName = addLName.Text,
+                Password = addPassword.Text,
+                AccountType = addAccountType.Text
+            };
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(addNewWorker, options);
+            MessageBox.Show("Työntekijä lisätty!");
         }
     }
 }
